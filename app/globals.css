@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+/* 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.loader-container {
+padding: 2px 0 2px 0;
+ /* border: 2px solid red; */
+ 
+  transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+}
+
+/* Air */
+svg {
+  width: 25rem;
+  
+}
+svg text {
+  font-size: 8rem;
+ 
+  stroke-width: 1;
+}
+svg text.text-body{
+  font-weight: 600;
+stroke: white;
+/* stroke-dasharray:20px 10% ; */
+animation: 4s ease-in forwards animate-stroke-end;
+}
+svg text.text-body2{
+  stroke: purple;
+  font-weight: 800;
+  /* stroke-dasharray:20px 10% ; */
+  animation: 4s ease-in forwards animate-stroke-end2;
+  }
+  svg text.text-bodyF{
+   
+    font-weight: 600;
+    fill : #b4b4b8
+    /* stroke-dasharray:20px 10% ; */
+    /* animation: 4s ease-in forwards animate-stroke-end2; */
+    }
+  svg text.text-bodyF2{
+    stroke: purple;
+    font-weight: 800;
+    fill : purple
+    /* stroke-dasharray:20px 10% ; */
+    /* animation: 4s ease-in forwards animate-stroke-end2; */
+    }
+  
+@keyframes animate-stroke-end {
+  0%{
+  fill:transparent;
+  stroke:#b4b4b8;
+  stroke-width: 5;
+  stroke-dashoffset: 40%;
+  stroke-dasharray: 20 32%;
+  
+  }
+  50%{
+  fill:transparent;
+  stroke:white;
+  stroke-width: 5;
+  }
+  100%{
+  fill:#b4b4b8;
+  stroke:transparent;
+  stroke-width: 5;
+  stroke-dashoffset: -40%;
+  stroke-dasharray: 32% 20;
+  }
+  
+  }
+  @keyframes animate-stroke-end2 {
+    0%{
+    fill:transparent;
+    stroke:purple;
+    stroke-width: 5;
+    stroke-dashoffset: 40%;
+    stroke-dasharray: 20 32%;
+    
+    }
+    50%{
+    fill:transparent;
+    stroke:white;
+    stroke-width: 5;
+    }
+    100%{
+    fill:purple;
+    stroke:transparent;
+    stroke-width: 5;
+    stroke-dashoffset: -40%;
+    stroke-dasharray: 32% 20;
+    }
+    
+    }
